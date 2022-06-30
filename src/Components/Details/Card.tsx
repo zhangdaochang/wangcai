@@ -3,7 +3,6 @@ import React from "react";
 import {PX2REM as PX,green} from 'lib/PX2REM'
 import Icon from "../Icon";
 const Wrapper = styled.div`
-  width: ${PX(398)};
   height: ${PX(150)};
   margin: 28px auto;
   background-color: white;
