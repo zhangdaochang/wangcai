@@ -1,7 +1,7 @@
 import React from "react";
-import Layout from "../Components/Layout";
+import Layout from "Components/Layout";
 
-function Tags() {
+function Details(){
     return (
         <Layout>
             <h2>标签页面</h2>;
@@ -9,4 +9,4 @@ function Tags() {
     )
 }
 
-export default Tags
+export default Details

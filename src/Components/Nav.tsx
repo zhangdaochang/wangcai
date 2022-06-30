@@ -1,25 +1,32 @@
 import styled from "styled-components";
-import {Link} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 import Icon from "./Icon";
+import {PX2REM as PX,green} from "../lib/PX2REM";
 
 
 const NavWrapper = styled.div`
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
-  font-size: 12px;
+  font-size: 16px;
   > ol {
     display: flex;
     > li {
       width: 33.3%;
       text-align: center;
-      padding: 7px;
+      padding: ${PX(15)};
       > a {
         display: flex;
         flex-direction: column;
-        text-align: center;
+        align-items: center;
         > .icon {
-          margin: 0 auto;
-          width: 2.4em;
-          height: 2.4em;
+          width: ${PX(24)};
+          height: ${PX(24)};
+          margin-bottom: 8px;
+        }
+        &.selected{
+          color: ${green};
+          .icon{
+            fill: ${green};
+          }
         }
       }
     }
@@ -31,23 +38,23 @@ const Nav = () => {
         <NavWrapper>
             <ol>
                 <li>
-                    <Link to="/tags">
-                        <Icon name={'tag'}/>
-                        标签页
-                    </Link>
+                    <NavLink to="/details" activeClassName="selected">
+                        <Icon name={'details'}/>
+                        明细
+                    </NavLink>
                 </li>
                 <li>
-                    <Link to="/money">
-                        <Icon name={'money'}/>
-                        记账页
-                    </Link>
+                    <NavLink to="/statistics" activeClassName="selected">
+                        <Icon name={'statistics'}/>
+                        统计
+                    </NavLink>
                 </li>
 
                 <li>
-                    <Link to="/statistics">
-                        <Icon name={'list'}/>
-                        统计页
-                    </Link>
+                    <NavLink to="/me" activeClassName="selected">
+                        <Icon name={'me'}/>
+                        我的
+                    </NavLink>
                 </li>
             </ol>
         </NavWrapper>
