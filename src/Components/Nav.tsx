@@ -7,6 +7,7 @@ import {PX2REM as PX,green} from "../lib/PX2REM";
 const NavWrapper = styled.div`
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
   font-size: 16px;
+  background-color: white;
   > ol {
     display: flex;
     > li {
