@@ -13,7 +13,13 @@ body{
   font-family: $font-hei;
   font-size: 16px;
 }
+input{
+  border: none;
+  outline: none;
+}
 
-html{
-  font-size: 414px;
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
 }
