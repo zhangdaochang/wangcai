@@ -1,7 +1,6 @@
 import Nav from "./Nav";
 import React from "react";
 import styled from "styled-components";
-import {PX2REM} from "../lib/PX2REM";
 
 
 const Wrapper = styled.div`
@@ -12,8 +11,8 @@ const Wrapper = styled.div`
 `
 const Main = styled.div`
   flex-grow: 1;
-  overflow-y: scroll;
-  height: ${PX2REM(815)};
+  overflow-y:scroll;
+  height: 50px;
 `
 
 

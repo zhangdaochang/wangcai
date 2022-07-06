@@ -5,7 +5,7 @@ import React from "react";
 import Button from "../Button";
 
 const Top = styled.div`
-  height: ${PX(256)};
+  height: ${PX(276)};
   background-color: ${green};
   >.top{
     display: flex;
@@ -14,34 +14,28 @@ const Top = styled.div`
     padding: ${PX(104)} ${PX(19)} 0 ${PX(43)};
     >.left{
       color: rgba(255, 255, 255, 100);
-      font-size: 16px;
+      font-size: ${PX(16)}
       >.dataSelect{
         display: flex;
         align-items: center;
-        >.icon{
-          margin-left: 6px;
-          fill: white;
-          width: 18px;
-          height: 18px;
+        >.test{
+          >div{
+            width: ${PX(44)};
+            height:${PX(44)};
+          }
         }
-      }
-    }
-    >.right{
-      >button.active{
-        opacity: 1;
-        background-color: rgba(255, 255, 255, 40%);
       }
     }
   }
   >.bottom{
-    font-size: 14px;
+    font-size: ${PX(14)};
     color:  rgba(255, 255, 255, 40%);
     margin:40px 0 0 44px;
     >div{
       color:  rgba(255, 255, 255, 100);
-      font-size:35px;
-      margin-left: 8px;
-      margin-top: 8px;
+      font-size:${PX(35)};
+      margin-left: ${PX(8)};
+      margin-top: ${PX(8)};
     }
   }
   
@@ -54,12 +48,12 @@ const DataCard = ()=>{
                 <div className="left">
                     <div className="dataSelect">
                         <span>2022年6月</span>
-                        <Icon name={'calendar'}/>
+                        <Icon name={'calendar'} iconFill='#fff'/>
                     </div>
                 </div>
                 <div className="right">
-                    <Button className={'active'}>支出</Button>
-                    <Button>入账</Button>
+                    <Button className={'active'} value={'支出'}/>
+                    <Button value={'入账'}/>
                 </div>
             </div>
 

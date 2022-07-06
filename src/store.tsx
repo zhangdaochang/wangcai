@@ -6,7 +6,7 @@ option = {
     title: {
         text: '支出构成',
         left: 24,
-        top: 30,
+        top: 10,
         textStyle: {
             fontSize:16,
             color: '#000'
@@ -27,7 +27,7 @@ option = {
         },
         data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun','46546','4654655']
     },
-    grid: { top: '55%' },
+    grid: { top: '55%',left:'20%'},
     series: [
         {
             type: 'bar',
@@ -36,9 +36,9 @@ option = {
         {
             name: '6月支出',
             type: 'pie',
-            radius: '55%',
+            radius: '45%',
             bottom:'100',
-            center: ['50%', '30%'],
+            center: ['50%', '35%'],
             data: [
                 { value: 336.55, name: '购物' },
                 { value: 310.10, name: '衣服' },
@@ -70,7 +70,7 @@ option = {
             },
             animationType: 'scale',
             animationEasing: 'elasticOut',
-            animationDelay: function (idx) {
+            animationDelay: function (idx?) {
                 return Math.random() * 200;
             }
         }

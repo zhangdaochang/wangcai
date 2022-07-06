@@ -79,11 +79,11 @@ function Money() {
                         <div>欢迎你</div>
                         <div>同志还未登录呢。。。</div>
                     </div>
-                    <Button>登录</Button>
+                    <Button value={'登录'}/>
                 </div>
             </MeSection>
             <TypeSection>
-                <NavLink  to="/details">
+                <NavLink  to="/typemanage">
                     <span>分类管理</span>
                     <Icon name={'right'}/>
                 </NavLink>
