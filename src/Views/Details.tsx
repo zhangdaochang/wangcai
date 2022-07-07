@@ -1,6 +1,6 @@
 import React from "react";
 import Layout from "Components/Layout";
-import Top from "Components/Details/Top";
+import Top from "Components/Details/Top/Top";
 import Card from "Components/Details/Card";
 import WriteM from "Components/Details/WriteM";
 import styled from "styled-components";
@@ -14,10 +14,10 @@ const Write = styled(WriteM)`
 `
 
 function Details(){
-    const {pageContext,pageData,setPageData}=useDetailsState()
+    const {pageContext,pageData,setPageData,date,num,AppData}=useDetailsState()
 
     return (
-        <pageContext.Provider value={{pageData,setPageData}}>
+        <pageContext.Provider value={{pageData,setPageData,date,num,AppData}}>
         <Layout>
             <Top/>
             <Card/>

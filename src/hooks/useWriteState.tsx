@@ -5,7 +5,7 @@ import {useEffect, useState} from "react";
 
 const useWriteState = ()=>{
     const [pageData, setPageData] = useState({
-        type: 'outgo', iconId: '', bei: '', output: '', iconList: [],date:''
+        typeName: 'outgo', iconId: '', bei: '', output: '', iconList: [],date:''
     })
     const liSelect = (e:any) => {
         if (e.target.nodeName === 'OL') return
@@ -22,7 +22,7 @@ const useWriteState = ()=>{
             x.iconId=id
             x.iconList.map((data:any)=>{
                 if(data.id===id){
-                    return data.iconBac=pageData.type==='income'?'rgba(98, 179, 123, 100)':'rgba(240,167,50,100)'
+                    return data.iconBac=pageData.typeName==='income'?'rgba(98, 179, 123, 100)':'rgba(240,167,50,100)'
                 }
                 return data.iconBac='rgba(239,239,239)'
             })
@@ -32,7 +32,7 @@ const useWriteState = ()=>{
 
     const selectType = (name:any) => {
         setPageData(() => {
-            return {...pageData, type: name}
+            return {...pageData, typeName: name}
         })
     }
 
@@ -40,10 +40,10 @@ const useWriteState = ()=>{
         let iconList = JSON.parse(window.localStorage.getItem('IconList')|| '')
         setPageData(() => {
             let x = {...pageData}
-            x['iconList'] = iconList[pageData.type]['iconList'].slice()
+            x['iconList'] = iconList[pageData.typeName]['iconList'].slice()
             return x
         })
-    }, [pageData.type])
+    }, [pageData.typeName])
 
     const NumberPadClick = (e:any) => {
 
@@ -51,7 +51,7 @@ const useWriteState = ()=>{
         if(e.target.innerText === '.'){
             value = pageData.output.indexOf('.')>= 1? pageData.output : pageData.output + e.target.innerText
         }else if(e.target.innerText === '确认'){
-            if (!pageData.type || !pageData.output || !pageData.iconId ||!pageData.date){
+            if (!pageData.typeName || !pageData.output || !pageData.iconId ||!pageData.date){
                 alert('不许确认')
                 return;
             }
@@ -70,7 +70,7 @@ const useWriteState = ()=>{
             iconList['mouth'][month][day].push(xas)
             window.localStorage.setItem('AppData',JSON.stringify(iconList))
             setPageData(()=>{return {
-                type: 'outgo', iconId: '', bei: '', output: '', iconList: [],date:''
+                typeName: 'outgo', iconId: '', bei: '', output: '', iconList: [],date:''
             }})
             return
         }else if(!e.target.innerText){

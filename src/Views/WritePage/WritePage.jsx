@@ -22,8 +22,8 @@ const WritePage = () => {
                     history.push('/details')
                 }}><Icon name="close"/></span>
                     <div className={'qie'}>
-                        <Button onclick={() => {selectType('outgo')}} className={pageData.type === 'outgo' ? 'active' : ''} value={"支出"}/>
-                        <Button onclick={() => {selectType('income')}} className={pageData.type === 'income' ? 'active' : ''} value={"收入"}/>
+                        <Button onclick={() => {selectType('outgo')}} className={pageData.typeName === 'outgo' ? 'active' : ''} value={"支出"}/>
+                        <Button onclick={() => {selectType('income')}} className={pageData.typeName === 'income' ? 'active' : ''} value={"收入"}/>
                     </div>
                     <Space/><Space/>
                     <DataSelect/>
