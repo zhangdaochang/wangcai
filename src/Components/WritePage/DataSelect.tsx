@@ -1,7 +1,5 @@
 import styled from "styled-components";
 import {PX2REM as PX} from "lib/PX2REM";
-import {useContext} from "react";
-import PageContext from "Components/WritePage/PageContext";
 
 const Wrapper = styled.div`
   height: ${PX(80)};
@@ -13,10 +11,9 @@ const Wrapper = styled.div`
   }
 `
 
-const DataSelect =()=>{
+const DataSelect =(props:any)=>{
 
-    const {pageData,setPageData} = useContext(PageContext)
-
+    const {pageData,setPageData} = props['data-props']
 
     return(
         <Wrapper>

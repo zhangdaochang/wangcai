@@ -1,6 +1,5 @@
 import styled from "styled-components";
-import {PX2REM as PX} from "../lib/PX2REM";
-import React from "react";
+import {PX2REM as PX} from "lib/PX2REM";
 
 const Wrapper = styled.button`
     border: none;

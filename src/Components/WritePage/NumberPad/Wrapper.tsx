@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {green, PX2REM as PX} from "../../../lib/PX2REM";
+import {green, PX2REM as PX} from "lib/PX2REM";
 
 const Wrapper = styled.div`
   height: ${PX(340)};

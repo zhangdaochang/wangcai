@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import {PX2REM} from "../lib/PX2REM";
+import {PX2REM} from "lib/PX2REM";
 
 
 const Wrapper = styled.div`

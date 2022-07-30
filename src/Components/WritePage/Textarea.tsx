@@ -1,8 +1,7 @@
 import styled from "styled-components";
 import {PX2REM as PX} from "lib/PX2REM";
 import Space from "Components/Space";
-import {ChangeEvent, useContext} from "react";
-import PageContext from "Components/WritePage/PageContext";
+import {ChangeEvent} from "react";
 
 const Wrapper = styled.div`
   padding: 0 20px 0 20px;
@@ -20,7 +19,7 @@ const Wrapper = styled.div`
 
 
 const Textarea = (props:any)=>{
-    const {pageData,setPageData} = useContext(PageContext)
+    const {pageData,setPageData} = props['data-props']
 
     const onchange = (v:ChangeEvent<HTMLTextAreaElement>)=>{
         setPageData(()=>{ return {...pageData,bei:v.target.value} })

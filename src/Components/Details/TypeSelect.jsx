@@ -1,7 +1,5 @@
 import styled from "styled-components";
 import {PX2REM as PX} from "lib/PX2REM";
-import {useContext} from "react";
-import pageContext from "Components/Details/PageContext";
 import Span from 'Components/Details/Span'
 
 const Wrapper = styled.div`
@@ -33,18 +31,19 @@ const Div = styled.div`
 `
 
 
-const TypeSelect = ()=>{
+const TypeSelect = (props)=>{
 
-    const {pageData,setPageData}=useContext(pageContext)
+    const {pageData,setPageData}=props['data-props']
     let IconList = JSON.parse(window.localStorage.getItem('IconList') || '')
 
     return(
-        <Wrapper onClick={()=>{setPageData({...pageData,isShow:false})}}>
+        <Wrapper onClick={()=>{props['data-props'].setPageData({...props['data-props'].pageData,isShow:false})}}>
             <div>
                 <Div onClick={(e)=>{
                     e.stopPropagation()
                     e.preventDefault()
-                    setPageData({...pageData,typeName:'全部类型',isShow:false,typeId:'all'})}}>全部类型</Div>
+                    setPageData({...pageData,typeName:'全部类型',typeId:'all',isShow:false})
+                    }}>全部类型</Div>
                 <Div onClick={e=>{
                     e.stopPropagation()
                     e.preventDefault()
@@ -52,13 +51,19 @@ const TypeSelect = ()=>{
                 <div onClick={(e)=>{
                     e.stopPropagation()
                     e.preventDefault()
-                    setPageData(()=>{return {...pageData,typeName:e.target['innerText'],isShow:false,typeId:'outgo',iconId:e.target.getAttribute('data-id')}})
+                    setPageData((fuck)=>{
+                        fuck.isShow=false
+                        fuck.typeName=e.target['innerText']
+                        fuck.typeId='outgo'
+                        fuck.iconId=e.target.getAttribute('data-id')
+                       return {...fuck}
+                    })
                 }}>
                     {
-                        IconList['outgo']['iconList'].map((data,key)=>{
-                            return <Span data-id={data.id} key={key}>{data.value}</Span>;
-
-                        })
+                            Object.keys(IconList['outgo']['iconList']).map((key)=>{
+                                let data = IconList['outgo']['iconList'][key];
+                                return <Span data-id={data.id} key={key}> {data.value} </Span>
+                            })
                     }
                 </div>
                 <Div onClick={e=>{
@@ -68,13 +73,18 @@ const TypeSelect = ()=>{
                 <div onClick={(e)=>{
                     e.stopPropagation()
                     e.preventDefault()
-                    setPageData(()=>{return {...pageData,typeName:e.target['innerText'],isShow:false,typeId:'income',iconId:e.target.getAttribute('data-id')}})
+                    setPageData((fuck)=>{
+                        fuck.isShow=false
+                        fuck.typeName=e.target['innerText']
+                        fuck.typeId='income'
+                        fuck.iconId=e.target.getAttribute('data-id')
+                       return {...fuck}
+                    })
                 }}>
                     {
-                        IconList['income']['iconList'].map((data,key)=>{
-                            return (
-                                <Span data-id={data.id} key={key}>{data.value}</Span>
-                            )
+                        Object.keys(IconList['income']['iconList']).map((key)=>{
+                            let data = IconList['income']['iconList'][key];
+                            return <Span data-id={data.id} key={key}>{data.value}</Span>
                         })
                     }
                 </div>

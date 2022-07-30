@@ -1,52 +1,52 @@
 {
   "outgo": {
-    "iconList": [
-      {
-        "id": "one",
+    "iconList": {
+      "one": {
+        "id":"one",
         "name": "shopcar",
         "value": "购物",
         "iconBac": "rgba(239, 239, 239, 100)",
         "iconFill": "#fff"
       },
-      {
-        "id": "two",
+      "two":{
+        "id":"two",
         "name": "yule",
         "value": "娱乐",
         "iconBac": "rgba(239, 239, 239, 100)",
         "iconFill": "#fff"
       },
-      {
-        "id": "three",
+      "three":{
+        "id":"three",
         "name": "eat",
         "value": "吃饭",
         "iconBac": "rgba(239, 239, 239, 100)",
         "iconFill": "#fff"
       },
-      {
-        "id": "fore",
+      "fore":{
+        "id":"fore",
         "name": "outher",
         "value": "其他",
         "iconBac": "rgba(239, 239, 239, 100)",
         "iconFill": "#fff"
       }
-    ]
+    }
   },
   "income": {
-    "iconList": [
-      {
-        "id": "one",
+    "iconList": {
+      "one":{
+        "id":"one",
         "name": "hongbao",
         "value": "红包",
         "iconBac": "rgba(239, 239, 239, 100)",
         "iconFill": "#fff"
       },
-      {
-        "id": "two",
+      "two":{
+        "id":"two",
         "name": "outher",
         "value": "其他",
         "iconBac": "rgba(239, 239, 239, 100)",
         "iconFill": "#fff"
       }
-    ]
+    }
   }
 }

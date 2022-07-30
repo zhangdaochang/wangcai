@@ -1,17 +1,12 @@
-import React from 'react';
 import {HashRouter as Router, Switch, Route, Redirect} from 'react-router-dom';
-import Details from "./Views/Details";
-import Me from "./Views/Me";
-import Statistics from "./Views/Statistics";
-import NotMatch from "./Views/NotMatch";
-import TypeManage from "./Views/TypeManage";
-import WritePage from "./Views/WritePage/WritePage";
-import DetailsChild from "./Views/DetailsChild";
-
-
+import Details from "Views/Details";
+import Me from "Views/Me";
+import Statistics from "Views/Statistics";
+import NotMatch from "Views/NotMatch";
+import TypeManage from "Views/TypeManage/TypeManage";
+import DetailsChild from "Views/DetailsChild/DetailsChild";
 
 function App() {
-
     return (
             <Router>
                 <Switch>
@@ -26,9 +21,6 @@ function App() {
                     </Route>
                     <Route path={"/typemanage"}>
                         <TypeManage/>
-                    </Route>
-                    <Route path={"/writepage"}>
-                        <WritePage/>
                     </Route>
                     <Route path={"/detailschild"}>
                         <DetailsChild/>

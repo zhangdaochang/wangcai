@@ -11,6 +11,7 @@ const Wrapper = styled.div`
   color: ${green};
   background-color: white;
   padding-right: ${PX(10)};
+  opacity: 1;
 `
 type Props = {
     className?:string
@@ -18,8 +19,8 @@ type Props = {
 
 const WriteM = (props:Props)=>{
     return(
-        <Wrapper className={props.className}>
-            <Icon name={'pen'} iconFill={'rgba(98, 179, 123, 100)'}/>
+        <Wrapper onClick={props.onClick} className={props.className}>
+            <Icon name={'pen'} iconFill={'rgb(48,112,196)'}/>
             记一笔
         </Wrapper>
     )

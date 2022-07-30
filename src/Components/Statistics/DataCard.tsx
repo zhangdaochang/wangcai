@@ -1,8 +1,6 @@
 import styled from "styled-components";
-import {green,PX2REM as PX} from "../../lib/PX2REM";
-import Icon from "../Icon";
-import React from "react";
-import Button from "../Button";
+import {green,PX2REM as PX} from "lib/PX2REM";
+import Button from "Components/Button";
 
 const Top = styled.div`
   height: ${PX(276)};
@@ -11,18 +9,14 @@ const Top = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: ${PX(104)} ${PX(19)} 0 ${PX(43)};
+    padding: ${PX(104)} ${PX(20)} 0 ${PX(42)};
     >.left{
-      color: rgba(255, 255, 255, 100);
-      font-size: ${PX(16)}
       >.dataSelect{
-        display: flex;
-        align-items: center;
-        >.test{
-          >div{
-            width: ${PX(44)};
-            height:${PX(44)};
-          }
+        >input{
+          color:#fff;
+          font-size:${PX(18)};
+          color-scheme: dark;
+          background: transparent;
         }
       }
     }
@@ -41,25 +35,29 @@ const Top = styled.div`
   
 `
 
-const DataCard = ()=>{
+const DataCard = (props:any)=>{
+    const {pageData,setPageData} = props['data-props'] 
     return(
         <Top>
             <div className="top">
                 <div className="left">
                     <div className="dataSelect">
-                        <span>2022年6月</span>
-                        <Icon name={'calendar'} iconFill='#fff'/>
+
+                      <input onChange={(e)=>{
+                          setPageData({...pageData,Year:e.target.value.split('-')[0],month:e.target.value.split('-')[1]})
+                      }} value={pageData.Year+'-'+pageData.month} type="month"/>
                     </div>
+
+                    
                 </div>
                 <div className="right">
-                    <Button className={'active'} value={'支出'}/>
-                    <Button value={'入账'}/>
+                    <Button onclick={()=>{setPageData({...pageData,type:'outgo'})}} className={pageData.type==='outgo'?'active':''} value={'支出'}/>
+                    <Button onclick={()=>{setPageData({...pageData,type:'income'})}} className={pageData.type==='outgo'?'':'active'} value={'入账'}/>
                 </div>
             </div>
 
             <div className="bottom">
-                共支出
-                <div>1012.65</div>
+               {pageData.type==='outgo'?<>共支出<div>{pageData.outgoValue}</div></>:<>共收入<div>{pageData.incomeValue}</div></>} 
             </div>
         </Top>
     )

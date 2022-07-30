@@ -1,7 +1,4 @@
-type EChartsOption = echarts.EChartsOption;
-let option:EChartsOption;
-
-option = {
+let option = {
     backgroundColor: '#FFFFFF',
     title: {
         text: '支出构成',
@@ -25,13 +22,13 @@ option = {
         axisTick:{
           show:false
         },
-        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun','46546','4654655']
+        data: []
     },
     grid: { top: '55%',left:'20%'},
     series: [
         {
             type: 'bar',
-            data: [23, 24, 18, 25, 27, 28,65,46,45]
+            data: []
         },
         {
             name: '6月支出',
@@ -39,16 +36,7 @@ option = {
             radius: '45%',
             bottom:'100',
             center: ['50%', '35%'],
-            data: [
-                { value: 336.55, name: '购物' },
-                { value: 310.10, name: '衣服' },
-                { value: 274.56, name: '吃饭' },
-                { value: 235.78, name: '住宿' },
-                { value: 400.13, name: '旅游' },
-                { value: 274.56, name: '吃饭' },
-                { value: 235.78, name: '住宿' },
-                { value: 400.13, name: '旅游' }
-            ].sort(function (a, b) {
+            data: [].sort(function (a, b) {
                 return a.value - b.value;
             }),
             roseType: 'radius',
@@ -57,20 +45,20 @@ option = {
             },
             labelLine: {
                 lineStyle: {
-                    color: 'rgba(98, 179, 123, 100)'
+                    color: 'rgb(48,112,196)'
                 },
                 smooth: 0.2,
                 length: 10,
                 length2: 20
             },
             itemStyle: {
-                color: 'rgba(98, 179, 123, 100)',
+                color: 'rgb(48,112,196)',
                 shadowBlur: 200,
                 shadowColor: 'rgba(0, 0, 0, 0.5)'
             },
             animationType: 'scale',
             animationEasing: 'elasticOut',
-            animationDelay: function (idx?) {
+            animationDelay: function (idx) {
                 return Math.random() * 200;
             }
         }

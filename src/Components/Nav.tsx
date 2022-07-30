@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import {NavLink} from "react-router-dom";
-import Icon from "./Icon";
-import {PX2REM as PX,green} from "../lib/PX2REM";
+import Icon from "Components/Icon";
+import {PX2REM as PX,green} from "lib/PX2REM";
 
 
 const NavWrapper = styled.div`

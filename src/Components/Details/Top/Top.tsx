@@ -1,29 +1,21 @@
-import React, {useContext, useEffect} from "react";
+import React from "react";
 import Icon from "Components/Icon";
 import TypeSelect from "Components/Details/TypeSelect";
-import pageContext from "Components/Details/PageContext";
 import Wrapper from "Components/Details/Top/Wrapper";
 
-
-
-const Top:React.FC = ()=>{
-    const {pageData,setPageData,num} = useContext(pageContext)
-    const AppData = JSON.parse(window.localStorage.getItem('AppData')||'')
-
-
-
-    useEffect(()=>{
-        num()
-    },[pageData.month,pageData.Year,pageData.typeId])
-
+const Top:React.FC = (props:any)=>{
+    const {pageData,setPageData} = props['data-props'] 
     const typeSelect = () => {
-        setPageData({...pageData,isShow:true})
+        setPageData((fuck: any)=>{
+            fuck.isShow=true
+            return {...fuck}
+        })
     }
-
+    
     return(
         <Wrapper>
             {
-                pageData.isShow?<TypeSelect/>:''
+                pageData.isShow?<TypeSelect data-props={{pageData,setPageData}}/>:''
             }
             <span>记账本</span>
             <div className="allType" onClick={typeSelect}>
@@ -37,11 +29,11 @@ const Top:React.FC = ()=>{
                     }} value={pageData.Year+'-'+pageData.month} type="month"/>
                 </div>
                 {
-                    pageData.typeId==='all'?<>
+                    pageData.typeId==='all'?
+                        <>
                             <div className="billing">总支出&nbsp;{pageData.outgoValue}</div>
                             <div className="recorded">总入账&nbsp;{pageData.incomeValue}</div>
-                        </>:pageData.typeId==='income'? <div className="billing">{pageData.typeName}总收入&nbsp;{pageData.outgoValue}</div>:<div className="billing">{pageData.typeName}总支出&nbsp;{pageData.outgoValue}</div>
-
+                        </>:pageData.typeId==='income'? <div className="billing">{pageData.typeName}总收入&nbsp;{pageData.incomeValue}</div>:<div className="billing">{pageData.typeName}总支出&nbsp;{pageData.outgoValue}</div>
                 }
 
 
