@@ -14,13 +14,14 @@ import Wrapper from "Views/DetailsChild/Wrapper";
 
 const DetailsChild =()=>{
     const [isShow,setIsShow]=useState(false)
-    
+    let history = useHistory()
     let data:any = useLocation().state
+    if(data===undefined)history.push('/details')
     data.iconList = getIconList('outgo')
     const [writeData,setWriteData] = useState(data)
 
-    let history = useHistory()
-    if(data===undefined)history.push('/details')
+    
+    
 
     let {Year,Month,day,hours,minutes} = date(data.date)
     let {name,value,href} = getIcon(data.amountTypeName,data.iconId)
