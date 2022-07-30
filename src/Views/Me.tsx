@@ -63,11 +63,11 @@ const TypeSection = styled.section`
   }
 `
 const Top = styled.div`
-height: ${PX(100)};
+height: ${PX(140)};
 background-color: ${green};
 color: #FFFFFF;
 text-align: center;
-padding: ${PX(20)};
+padding: ${PX(40)};
 `
 
 
@@ -89,7 +89,7 @@ function Money() {
                 </div>
             </MeSection> */}
             <Top>
-              <h2>XX记账</h2>
+              <h2>旺财记账</h2>
             </Top>
               <TypeSection>
                   <NavLink  to="/typemanage">

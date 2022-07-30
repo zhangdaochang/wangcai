@@ -16,7 +16,9 @@
   <body>
     <div id="root"></div>
   <script>
-    const pageWidth = window.innerWidth
+    let pageWidth = 0
+    if(window.innerWidth>768)pageWidth =  window.innerHeight
+    pageWidth =  window.innerWidth
     document.write('<style>html{font-size:'+pageWidth+'px;}</style>')
   </script>
   </body>
