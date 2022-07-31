@@ -15,7 +15,7 @@
 
 ![我的](https://gitee.com/ddxinhao/drawing-bed/raw/master/ReadmeAssets/%E6%88%91%E7%9A%84.png)
 
-![分类管理](https://gitee.com/ddxinhao/drawing-bed/raw/master/ReadmeAssets/%E5%88%86%E7%B1%BB%E7%AE%A1%E7%90%86.png)
+![分类管理](https://gitee.com/ddxinhao/drawing-bed/raw/master/%E5%88%86%E7%B1%BB%E7%AE%A1%E7%90%86.png)
 
 ![数据二页](https://gitee.com/ddxinhao/drawing-bed/raw/master/ReadmeAssets/%E6%95%B0%E6%8D%AE%E4%BA%8C%E9%A1%B5.png)
 
