@@ -27,3 +27,10 @@ input{
   display: block;
   clear: both;
 }
+@media screen and (min-width:670px){
+  body{
+    width: 670px;
+    height: 1200px;
+    margin: 0 auto;
+  }
+}
